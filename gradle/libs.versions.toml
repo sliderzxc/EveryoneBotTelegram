@@ -1,9 +1,14 @@
 [versions]
 agp = "8.3.0-alpha07"
 kotlin = "1.9.10"
+telegramApi = "6.1.0"
+kotlinx-serialization = "1.4.1"
 
 [libraries]
-#material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+telegram-api = { group = "com.github.kotlin-telegram-bot.kotlin-telegram-bot", name = "dispatcher", version.ref = "telegramApi" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

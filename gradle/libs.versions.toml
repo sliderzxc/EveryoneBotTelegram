@@ -12,3 +12,4 @@ kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+shadow-jar = { id = "com.github.johnrengelman.shadow", version.require = "8.1.1" }

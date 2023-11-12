@@ -18,17 +18,17 @@ class Bot(private val mongoDbRepository: MongoDbRepository) {
                 }
 
                 command("in") {
-                    mongoDbRepository.addUser(User(id = message.from?.id ?: 0), message.chat.title ?: "mafia")
+                    mongoDbRepository.addUser(User(id = message.from?.id ?: 0), message.chat.title ?: "wrong")
                     bot.sendMessage(ChatId.fromId(message.chat.id), text = "Ви були додані до списку отримувачів.")
                 }
 
                 command("out") {
-                    mongoDbRepository.deleteUser(User(id = message.from?.id ?: 0), message.chat.title ?: "mafia")
+                    mongoDbRepository.deleteUser(User(id = message.from?.id ?: 0), message.chat.title ?: "wrong")
                     bot.sendMessage(ChatId.fromId(message.chat.id), text = "Вас видалено зі списку отримувачів.")
                 }
 
                 command("everyone") {
-                    val users = mongoDbRepository.getAllUsers(message.chat.title ?: "mafia")
+                    val users = mongoDbRepository.getAllUsers(message.chat.title ?: "wrong")
                     notifyEveryone(bot, message.chat.id, users)
                 }
             }
